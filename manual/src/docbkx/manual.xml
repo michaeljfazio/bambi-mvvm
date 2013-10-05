@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<article version="5.0" xmlns="http://docbook.org/ns/docbook"
+	xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:xl="http://www.w3.org/1999/xlink">
+	<info>
+		<title>Vaadin Bambi MVVM 1.0.0-alpha3 Manual</title>
+		<author>
+			<personname>
+				<firstname>Michael</firstname>
+				<surname>Fazio</surname>
+			</personname>
+			<email>michaelfazio@me.com</email>
+		</author>
+		<copyright>
+			<year>2012</year>
+			<holder></holder>
+		</copyright>
+	</info>
+
+	<section xml:id="introduction">
+		<title>Introduction</title>
+		<para>
+			This is an alpha release of the Bambi MVVM library. This manual will be updated 
+			in the near future. For more information please visit the 
+			<link xl:href="http://code.google.com/p/bambi">Bambi MVVM homepage</link>.
+		</para>
+	</section>
+
+	<!--section xml:id="introduction">
+		<title>Introduction</title>
+		<para>
+			Document the MyAddon add-on for
+			<link xl:href="http://vaadin.com">Vaadin</link>
+			here.
+		</para>
+	</section>
+
+	<section xml:id="usage">
+		<title>Using MyAddon</title>
+		<para>
+			This is another section.
+		</para>
+
+		<para>
+			A section can have multiple paragraphs. You can do formatting using
+			pre-defined styles such as
+			<classname>MyClass&lt;T&gt;</classname>
+			,
+			<interfacename>@NotNull</interfacename>
+			etc.
+		</para>
+
+		<para>
+			Program listings can also be included in the documentation:
+
+			<programlisting language="java"><![CDATA[
+import mypackage.*;
+
+public class MyClass {
+    // ... listing here
+}
+                ]]></programlisting>
+		</para>
+	</section>
+
+	<section xml:id="another_section">
+		<title>Another section</title>
+		<para>
+			You can link from one section to another:
+			<xref linkend="usage" />
+			.
+		</para>
+	</section-->
+
+</article>

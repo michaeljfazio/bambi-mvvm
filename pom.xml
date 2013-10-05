@@ -1,0 +1,70 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>org.vaadin.addons.bambi</groupId>
+	<artifactId>bambi-root</artifactId>
+	<version>1.0.0-alpha3</version>
+	<packaging>pom</packaging>
+
+	<name>bambi - Root</name>
+	<description>A Lightweight Annotation-Driven MVVM Add-on for Vaadin</description>
+	<url>http://code.google.com/p/bambi/</url>
+	<organization>
+		<name>Michael Fazio</name>
+		<url>http://au.linkedin.com/pub/michael-fazio/b/b20/a23</url>
+	</organization>
+	<developers>
+		<developer>
+			<name>Michael Fazio</name>
+			<email>michaelfazio@me.com</email>
+			<roles>
+				<role>Project Owner</role>
+				<role>Lead Developer</role>
+			</roles>
+		</developer>
+	</developers>
+
+	<scm>
+		<connection>scm:hg:https://code.google.com/p/bambi</connection>
+		<developerConnection>scm:hg:https://code.google.com/p/bambi</developerConnection>
+		<url>http://code.google.com/p/bambi</url>
+		<tag>default</tag>
+	</scm>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<addonBaseName>bambi-addon</addonBaseName>
+		<addonFullName>${addonBaseName}-${project.version}</addonFullName>
+		<addonJarName>${addonFullName}.jar</addonJarName>
+	</properties>
+
+	<modules>
+		<module>parent</module>
+		<module>addon</module>
+		<module>demo</module>
+		<module>manual</module>
+	</modules>
+
+	<build>
+		<plugins>
+			<!-- Build a ZIP package for the Vaadin add-on, including documentation 
+				etc. -->
+			<plugin>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<version>2.2-beta-5</version>
+				<configuration>
+					<finalName>${addonFullName}</finalName>
+					<appendAssemblyId>false</appendAssemblyId>
+					<descriptors>
+						<!-- First extract the manifest from the JAR -->
+						<descriptor>assembly/extractManifest.xml</descriptor>
+						<!-- Then build the ZIP, including a copy of the manifest -->
+						<descriptor>assembly/addon.xml</descriptor>
+					</descriptors>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>

@@ -1,0 +1,11 @@
+*.swp
+*.iml
+*.versionsBackup
+*.DS_Store
+target
+.idea
+.classpath
+.project
+.settings
+.metadata
+Servers
