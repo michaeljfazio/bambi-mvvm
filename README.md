@@ -36,16 +36,21 @@ Alternatively see the [releases section](https://github.com/S73417H/bambi-mvvm/r
 
 ## Trying out the demo
 
-  1. Compile and install the entire project:
+  1. Install the parent pom.
+
+    `mvn install -f parent/pom.xml`
+
+  2. Compile and install the entire project:
 
     `mvn install`
 
-  2. Start the built-in Jetty web server:
+  3. Start the built-in Jetty web server:
 
     `cd demo`
+
     `mvn jetty:run`
 
-  3. Open your favorite web browser and point it to:
+  4. Open your favorite web browser and point it to:
 
     http://localhost:8080/demo/
 
