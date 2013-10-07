@@ -4,7 +4,7 @@
 
 	<groupId>org.vaadin.addons.bambi</groupId>
 	<artifactId>bambi-root</artifactId>
-	<version>1.0.0-alpha3</version>
+	<version>1.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<name>bambi - Root</name>
@@ -26,9 +26,9 @@
 	</developers>
 
 	<scm>
-		<connection>scm:hg:https://code.google.com/p/bambi</connection>
-		<developerConnection>scm:hg:https://code.google.com/p/bambi</developerConnection>
-		<url>http://code.google.com/p/bambi</url>
+		<connection>scm:git:https://github.com/S73417H/bambi-mvvm.git</connection>
+		<developerConnection>scm:git:https://github.com/S73417H/bambi-mvvm.git</developerConnection>
+		<url>https://github.com/S73417H/bambi-mvvm</url>
 		<tag>default</tag>
 	</scm>
 
