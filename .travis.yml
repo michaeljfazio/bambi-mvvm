@@ -1,5 +1,1 @@
 language: java
-
-before_script:
-  - mkdir manual/src/docbkx/img
-
