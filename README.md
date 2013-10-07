@@ -10,6 +10,12 @@ The overall structure borrows heavily from existing MVC/MVVM frameworks, includi
  * [Vaadin FormBinder](http://code.google.com/p/formbinder/)
  * [Magellan Framework](http://code.google.com/p/magellan-framework/)
 
+# Current Build Status
+
+Bambi-MVVM uses Travis CI for continuous integration.
+
+[![Build Status](https://travis-ci.org/S73417H/bambi-mvvm.png)](https://travis-ci.org/S73417H/bambi-mvvm)
+
 # Download
 
 This add-on is made available via the official Vaadin add-on directory using the following link: https://vaadin.com/directory#addon/bambi-mvvm.
