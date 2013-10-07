@@ -70,7 +70,7 @@ public @interface PropertyBound {
         public void bind() {
             PropertyBound itemBound = viewerField.getAnnotation(PropertyBound.class);
             Property.Viewer viewer = get(viewerField, view, Property.Viewer.class);
-            Property<?> property = get(itemBound.to(), viewModel, Property.class);
+            Property property = get(itemBound.to(), viewModel, Property.class);
             viewer.setPropertyDataSource(property);
         }
 
