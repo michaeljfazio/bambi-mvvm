@@ -23,6 +23,7 @@
 				<executions>
 					<execution>
 						<goals>
+                            <goal>generate-html</goal>
 							<goal>generate-pdf</goal>
 						</goals>
 						<phase>generate-sources</phase>
