@@ -1,8 +1,4 @@
 language: java
-install: 
-  - mvn install -f parent/pom.xml
 before_script:
   - mkdir manual/src/docbkx/img
-script: 
-  - mvn test
 
