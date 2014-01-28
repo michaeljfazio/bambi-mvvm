@@ -84,84 +84,90 @@ The following table contains a list of currently supported Bambi MVVM annotation
 
 ## View
 
-	@View(model = AddressBookViewModel.class)
-	public class AddressBookView extends CustomComponent implements Handler {
+``` java
+@View(model = AddressBookViewModel.class)
+public class AddressBookView extends CustomComponent implements Handler {
 
-	    private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-	    @ActionBound(to = "addAddress")
-	    private final Button addButton = new Button("New Address");
+    @ActionBound(to = "addAddress")
+    private final Button addButton = new Button("New Address");
 
-	    @ActionBound(to = "removeAddress")
-	    private final Button removeButton = new Button("Remove Address");
+    @ActionBound(to = "removeAddress")
+    private final Button removeButton = new Button("Remove Address");
 
-	    @PropertyBound(to = "selected")
-	    private final AddressBookForm form = new AddressBookForm();
+    @PropertyBound(to = "selected")
+    private final AddressBookForm form = new AddressBookForm();
 
-	    @ContainerBound(to = "addresses", columns = { NAME_PROPERTY,
-	        SURNAME_PROPERTY, LINE1_PROPERTY, LINE2_PROPERTY, CITY_PROPERTY,
-	        STATE_PROPERTY, AREACODE_PROPERTY, COUNTRY_PROPERTY })
+    @ContainerBound(to = "addresses", columns = { NAME_PROPERTY,
+        SURNAME_PROPERTY, LINE1_PROPERTY, LINE2_PROPERTY, CITY_PROPERTY,
+        STATE_PROPERTY, AREACODE_PROPERTY, COUNTRY_PROPERTY })
 
-	    @ValueChangeBound(to = "selectAddress")
-	    private final Table table = new Table();
+    @ValueChangeBound(to = "selectAddress")
+    private final Table table = new Table();
 
-	    private final Action commitAction = new ShortcutAction("ENTER",
-	        ShortcutAction.KeyCode.ENTER, null);
+    private final Action commitAction = new ShortcutAction("ENTER",
+        ShortcutAction.KeyCode.ENTER, null);
 
-	...
-	}
+...
+}
+```
 
 ## View Model
 
-	public class AddressBookViewModel implements Serializable {
+``` java
+public class AddressBookViewModel implements Serializable {
 
-	    private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-	    public final Container addresses = new BeanItemContainer<Address>(Address.class);
-	    
-	    public final ObjectProperty<BeanItem> selected = new ObjectProperty<BeanItem>(null, BeanItem.class);
-	        
-	    public void selectAddress(Property.ValueChangeEvent event) {
-	        Table table = (Table)event.getProperty();
-	        Item selectedItem = table.getItem(table.getValue());
-	        selected.setValue(selectedItem);
-	    }
+    public final Container addresses = new BeanItemContainer<Address>(Address.class);
+    
+    public final ObjectProperty<BeanItem> selected = new ObjectProperty<BeanItem>(null, BeanItem.class);
+        
+    public void selectAddress(Property.ValueChangeEvent event) {
+        Table table = (Table)event.getProperty();
+        Item selectedItem = table.getItem(table.getValue());
+        selected.setValue(selectedItem);
+    }
 
-	    public void addAddress(Button.ClickEvent event) {
-	        Address newAddress = new Address();
-	        Item item = addresses.addItem(newAddress);
-	        selected.setValue(item);
-	        event.getComponent().getWindow().showNotification("Address Added",TYPE_HUMANIZED_MESSAGE);
-	    }
+    public void addAddress(Button.ClickEvent event) {
+        Address newAddress = new Address();
+        Item item = addresses.addItem(newAddress);
+        selected.setValue(item);
+        event.getComponent().getWindow().showNotification("Address Added",TYPE_HUMANIZED_MESSAGE);
+    }
 
-	    public void removeAddress(Button.ClickEvent event) {
-	        BeanItem item = (BeanItem)selected.getValue();
-	        Address address = (Address)item.getBean();
-	        if(addresses.removeItem(address)) {
-	                event.getComponent().getWindow().showNotification("Address Removed", TYPE_HUMANIZED_MESSAGE);
-	        }
-	    }
+    public void removeAddress(Button.ClickEvent event) {
+        BeanItem item = (BeanItem)selected.getValue();
+        Address address = (Address)item.getBean();
+        if(addresses.removeItem(address)) {
+                event.getComponent().getWindow().showNotification("Address Removed", TYPE_HUMANIZED_MESSAGE);
+        }
+    }
 
-	}
+}
+```
 
 ## Binding View to ViewModel
 
-	public class AddressBook extends Application {
+``` java
+public class AddressBook extends Application {
 
-	        private static final long serialVersionUID = 1L;
+        private static final long serialVersionUID = 1L;
 
-	        private Window window;
+        private Window window;
 
-	        /** {@inheritDoc} */
-	        @Override
-	        public void init() {
-	                window = new Window("Bambi Demo Application - Address Book");
-	                ViewContainer<AddressBookView> view = new AnnotatedViewFactory().materialize(AddressBookView.class);
-	                window.setContent(view);
-	                setMainWindow(window);
-	        }
+        /** {@inheritDoc} */
+        @Override
+        public void init() {
+                window = new Window("Bambi Demo Application - Address Book");
+                ViewContainer<AddressBookView> view = new AnnotatedViewFactory().materialize(AddressBookView.class);
+                window.setContent(view);
+                setMainWindow(window);
+        }
 
-	}
+}
+```
 
 # Authors
 
